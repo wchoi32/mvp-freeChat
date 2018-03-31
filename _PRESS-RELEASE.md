@@ -18,27 +18,29 @@ Once the project moves into development, the press release can be used as a touc
  
 ## Heading ##
   > Name the product in a way the reader (i.e. your target customers) will understand.
-
+  Free Chat
 ## Sub-Heading ##
   > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
-
+  Product is for those who wants true freedom of speech in a safe, non-hostile environment.
 ## Summary ##
   > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
-
+  Internet used to be a place where everyone can participate freely. However, there were consequences of cyberbullying, insults, and harrassment that needs to be addressessed. 
+  With this chat platform, it will clear your chat for privacy but at the same time censor any harrassments and insulting language as well as filter out users who you do not want to see message from.
 ## Problem ##
   > Describe the problem your product solves.
-
+  Free speech in non-hostile environment.
 ## Solution ##
   > Describe how your product elegantly solves the problem.
-
+  Replaces offensive words and blurrs them out.
 ## Quote from You ##
   > A quote from a spokesperson in your company.
-
+  'Come sign up, join the conversation around the world without the toxins'
 ## How to Get Started ##
   > Describe how easy it is to get started.
-
+  Just one-step login, and you are good to go.
 ## Customer Quote ##
   > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
-
+  'Free Speech, Anonymity, Privacy, and non-hostile environment, its the safe space I wanted'
 ## Closing and Call to Action ##
   > Wrap it up and give pointers where the reader should go next.
+  'Come sign up and lets chat where noone is watching you!'
