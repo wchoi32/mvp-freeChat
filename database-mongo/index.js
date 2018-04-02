@@ -1,31 +1,34 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/test');
+// mongoose.connect('mongodb://localhost/freechat');
 
-var db = mongoose.connection;
+// var db = mongoose.connection;
 
-db.on('error', function() {
-  console.log('mongoose connection error');
+// db.on('error', function() {
+//   console.log('mongoose connection error');
+// });
+
+// db.once('open', function() {
+//   console.log('mongoose connected successfully');
+// });
+
+var postSchema = mongoose.Schema({
+  postid: Number,
+  username: String,
+  time: String,
+  post: String,
 });
 
-db.once('open', function() {
-  console.log('mongoose connected successfully');
-});
+var Posts = mongoose.model('Posts', postSchema);
 
-var itemSchema = mongoose.Schema({
-  quantity: Number,
-  description: String
-});
-
-var Item = mongoose.model('Item', itemSchema);
-
-var selectAll = function(callback) {
-  Item.find({}, function(err, items) {
-    if(err) {
-      callback(err, null);
-    } else {
-      callback(null, items);
-    }
-  });
+const insertOnePost = (story, callback) => {
+  Posts.create(story, callback);
 };
 
-module.exports.selectAll = selectAll;
+const retrievePosts = () => Posts.find().sort({ postid: -1}).limit(10);
+
+const count = () => Posts.count();
+
+
+module.exports.insertOnePost = insertOnePost;
+module.exports.retrievePosts = retrievePosts;
+module.exports.count = count;
