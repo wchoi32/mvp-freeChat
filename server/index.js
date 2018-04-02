@@ -23,6 +23,12 @@ app.get('/count', function (req, res) {
   });
 }); 
 
+app.post('/ban', function(req, res) {
+  db.banAndRetrieve(req.body).then(data => {
+    res.send(data);
+  });
+});
+
 app.post('/posts', function(req, res) {
   filter = new Filter();
   req.body.post = filter.clean(req.body.post);

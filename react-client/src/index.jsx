@@ -12,6 +12,7 @@ class App extends React.Component {
       username: 'anonymous',
       list: [],
       count: 0,
+      ban: [],
     }
   }
 
@@ -20,10 +21,12 @@ class App extends React.Component {
     this.count();
   }
 
-  fetch() {
+  fetch(ban) {
     $.ajax({
-      url: '/posts',
-      method: 'GET', 
+      url: '/ban',
+      method: 'POST', 
+      contentType: 'application/json',
+      data: JSON.stringify(this.state.ban),
       success: (data) => {
         this.count();
 
@@ -80,6 +83,27 @@ class App extends React.Component {
     });
   }
 
+  ban(banList) {
+    let arr = this.state.ban;
+    let toggle = false;
+
+    for (var i = 0; i < arr.length; i++) {
+      if(arr[i] === banList) {
+        return toggle = true;
+      }
+    }
+
+    if(!toggle) {
+      arr.push(banList)
+    }
+
+    this.setState({
+      ban: arr
+    })
+
+    this.fetch(arr);
+  }
+
   render () {
     return (<div>
       <h1>Welcome to Free Chat</h1>
@@ -89,7 +113,7 @@ class App extends React.Component {
           login = { this.login.bind(this) }
         />
       </div>
-      
+
       <hr />
 
       <div className="bottom-container"> 
@@ -98,7 +122,10 @@ class App extends React.Component {
         />
       </div>
       <div className="middle-container"> 
-        <Board lists={this.state.list}/>
+        <Board 
+          lists= { this.state.list }
+          ban = { this.ban.bind(this) }
+        />
       </div>
     </div>)
   }

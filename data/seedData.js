@@ -20,6 +20,7 @@ function createPosts(n) {
     username: null,
     time: null,
     post: null,
+    ban: [],
   }
 
   postObj.postid = n;

@@ -1,13 +1,14 @@
 import React from 'react';
 import BoardItem from './BoardItem.jsx';
 
-const Board = (props) => (
+const Board = ({lists, ban}) => (
   <div>
-    <h4> Board Component </h4>
-    { props.lists.map(list => 
+    <h3> Board </h3>
+    { lists.map(list => 
       <BoardItem 
-        list={list}
-        key={list.postid}
+        key = { list.postid } 
+        list = { list }
+        ban = { ban }
       />
     )}
   </div>
