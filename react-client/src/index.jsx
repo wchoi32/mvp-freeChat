@@ -105,22 +105,30 @@ class App extends React.Component {
   }
 
   render () {
-    return (<div>
-      <h1>Welcome to Free Chat</h1>
+    return (
+      <div>
       <div className="top-container"> 
-        <Login 
-          username={ this.state.username }
-          login = { this.login.bind(this) }
-        />
+        <div className="header">
+          <h1>Welcome to Free Chat</h1>
+        </div>
+        <div className="login">
+          <Login 
+            username={ this.state.username }
+            login = { this.login.bind(this) }
+          />
+        </div>
       </div>
 
-      <hr />
+      
 
       <div className="bottom-container"> 
         <Post 
           post = { this.post.bind(this) }
         />
       </div>
+
+      <hr />
+
       <div className="middle-container"> 
         <Board 
           lists= { this.state.list }

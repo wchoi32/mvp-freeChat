@@ -29,6 +29,8 @@ class Post extends React.Component {
       <div>
         <label>
           <textarea 
+            rows="10" 
+            cols="150"
             value = { this.state.value } 
             onChange = { this.onChange } 
             placeholder = 'Enter your post here'

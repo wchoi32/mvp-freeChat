@@ -2,6 +2,7 @@ import React from 'react';
 
 const BoardItem = ({ list, ban }) => (
   <div
+    className="boardTile"
     onClick = { () => ban(list.username) }
   >
   <h4>

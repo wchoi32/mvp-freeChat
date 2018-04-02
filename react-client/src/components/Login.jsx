@@ -27,20 +27,25 @@ class Login extends React.Component {
   render() {
     return (
       <div>
-        <h4> Welcome, {this.props.username} </h4>
-        <div className="login-container">
-          <label><b>Username: </b></label>
-          <input 
-            type = "text" 
-            placeholder = "Enter Username"
-            value = { this.state.user }
-            onChange =  { this.onChange }
-          />
-          <button
-            onClick = {() => this.props.login(this.state.user) }
-          >
-            Login
-          </button>
+        <div className="logincomp">
+          <div className="loginleft">
+            <h4> Welcome, {this.props.username} </h4>
+          </div>
+        
+          <div className="login-container">
+            <label><b>Username: </b></label>
+            <input 
+              type = "text" 
+              placeholder = "Enter Username"
+              value = { this.state.user }
+              onChange =  { this.onChange }
+            />
+            <button
+              onClick = {() => this.props.login(this.state.user) }
+            >
+              Login
+            </button>
+          </div>
         </div>
       </div>
     )
